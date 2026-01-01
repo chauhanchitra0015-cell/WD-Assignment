@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combination Selector Demo</title>
+    <style>
+        div p{
+            color:blue;/*descendant:selects all<p> inside <div>*/
+        }
+        div>p{
+            font-weight:bold;/*Child selector:selects only direct child <p> of <div>*/
+        }
+        h2+p{
+            color:red;/*Adjacent sibling selector:selects <p> immediately after <h2>*/
+        }
+        h3~p{
+            font-style:italic;/*General sibling selector:selects all<p> after <h3>*/
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <p> This is a direct child paragraph inside div</p>
+        <section>
+            <p> This is a nested paragraph inside (descendent of div).</p>
+        </section>
+    </div>
+    <h2>Heading 2</h2>
+    <p>This paragraph comes right after h2(adjacent sibling).</p>
+
+    <h3>Heading 3</h3>
+    <p>First paragraph after h3 (general sibling).</p>
+    <p>Second paragraph after h2(general sibling).</p>
+</body>
+</html>

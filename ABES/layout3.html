@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grid Layout</title>
+  <style>
+    :root{
+      --bg:#f7f7f7;
+      --text:#222;
+      --muted:#666;
+      --primary:#333;
+      --card:#ffffff;
+      --border:#e5e5e5;
+      --accent:#4c8bf5;
+    }
+
+    *{ box-sizing: border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.5;
+    }
+
+    /* ====== Page Grid ====== */
+    .page {
+      display: grid;
+      grid-template-columns: 240px 1fr;         /* Sidebar + Content */
+      grid-template-rows: auto 1fr auto;        /* Header + Main + Footer */
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+      min-height: 100vh;
+    }
+
+    /* ====== Header ====== */
+    header {
+      grid-area: header;
+      background: var(--primary);
+      color: #fff;
+      display: grid;
+      grid-template-columns: 240px 1fr; /* logo column matches sidebar width */
+      align-items: center;
+      gap: 12px;
+      padding: 10px 16px;
+      border-bottom: 1px solid #00000022;
+    }
+    .logo {
+      background:#222;
+      border:1px solid #00000033;
+      border-radius:8px;
+      padding:10px 12px;
+      font-weight:600;
+      text-align:center;
+    }
+    .top-menu {
+      justify-self: end;
+      display: grid;
+      grid-auto-flow: column;
+      gap: 10px;
+    }
+    .top-menu button{
+      appearance:none;
+      border:1px solid #ffffff44;
+      background:#ffffff1a;
+      color:#fff;
+      padding:8px 12px;
+      border-radius:8px;
+      font-weight:600;
+      cursor:pointer;
+      transition: transform .08s ease, background .2s;
+    }
+    .top-menu button:hover{ background:#ffffff2a; }
+    .top-menu button:active{ transform: scale(0.98); }
+
+    /* ====== Sidebar ====== */
+    nav {
+      grid-area: sidebar;
+      background: var(--card);
+      border-right: 1px solid var(--border);
+      padding: 20px;
+    }
+    nav h3 {
+      margin:0 0 10px;
+      color:var(--muted);
+      font-size:14px;
+      letter-spacing:.3px;
+      text-transform: uppercase;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+    }
+    nav a {
+      display:block;
+      text-decoration:none;
+      color:var(--text);
+      padding:10px 12px;
+      border-radius:8px;
+      border:1px solid var(--border);
+      background:#fff;
+      transition: background .2s, box-shadow .2s, transform .08s;
+    }
+    nav a:hover {
+      background:#fafafa;
+      box-shadow: 0 2px 6px #00000010;
+    }
+    nav a:active { transform: scale(0.98); }
+
+    /* ====== Main Content ====== */
+    main {
+      grid-area: main;
+      padding: 24px;
+      background: #fcfcfc;
+    }
+    .card {
+      background:#fffbe6;
+      border:2px solid black;
+      border-radius:12px;
+      padding:20px;
+      box-shadow: 0 4px 12px #0000000a;
+    }
+    h1 {
+      margin:0 0 8px;
+      font-size:28px;
+    }
+    p.lead {
+      margin:0 0 16px;
+      color:var(--muted);
+    }
+    .lines {
+      display:grid;
+      gap:10px;
+      margin-top:12px;
+    }
+    .line {
+      height:12px;
+      background:linear-gradient(90deg, #ececec, #f7f7f7);
+      border:1px solid var(--border);
+      border-radius:6px;
+    }
+
+    /* ====== Footer ====== */
+    footer {
+      grid-area: footer;
+      background: var(--primary);
+      color:#fff;
+      text-align: center;
+      padding: 14px 16px;
+      border-top: 1px solid #00000022;
+    }
+
+    /* ====== Responsive ====== */
+    @media (max-width: 900px){
+      .page {
+        grid-template-columns: 1fr;           /* Single column */
+        grid-template-areas:
+          "header"
+          "main"
+          "sidebar"
+          "footer";
+      }
+      header {
+        grid-template-columns: 1fr;           /* Logo + menu on one line */
+        gap: 10px;
+      }
+      .logo { justify-self: start; width: fit-content; padding:10px 10px; }
+      .top-menu { justify-self: start; }
+      nav { border-right: none; border-top:1px solid var(--border); }
+    }
+
+    @media (max-width: 560px){
+      .top-menu { grid-auto-flow: row; grid-template-columns: repeat(4, auto); }
+      .top-menu button { padding:8px 10px; }
+      main { padding:16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Header -->
+    <header>
+      <div class="logo">Logo</div>
+      <div class="top-menu">
+        <button>H</button>
+        <button>S</button>
+        <button>G</button>
+        <button>C</button>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <nav>
+      <h3>Menu</h3>
+      <ul>
+        <li>Home</a></li>
+        <li>Services</a></li>
+        <li>Gallery</a></li>
+        <li>Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main -->
+    <main>
+      <div class="card">
+        <h1>Heading</h1>
+        <p class="lead">I am from — (yahan aap apna intro/additional text likh sakte hain)</p>
+
+        <!-- Dummy lines to match sketch -->
+        <div class="lines">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>Footer</footer>
+  </div>
+</body>
+</html>
+ 

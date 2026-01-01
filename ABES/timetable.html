@@ -1,0 +1,210 @@
+<!--timetable-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .table1 {
+            border: 2px solid black;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        .AB206 {
+            background: #5bcbf0;
+            text-align: center;
+        }
+
+        .VACA {
+            background-color: rgb(248, 177, 227);
+            text-align: center;
+        }
+
+        #VACA304 {
+            background-color: rgb(117, 203, 176);
+            text-align: center;
+        }
+
+        #VACAsec-c {
+            background-color: orange;
+            text-align: center;
+        }
+
+        #VC25 {
+            background-color: rgb(253, 193, 178);
+            text-align: center;
+        }
+
+        .header {
+            text-align: center;
+            /* height: 100px; */
+        }
+
+        .logo {
+            float: left;
+            width: 70px;
+            height: 50px;
+            margin-top: 5px;
+            margin-left: 20px;
+            margin-right: 15px;
+        }
+
+        .college-name {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .sub-heading {
+            font-size: 16px;
+            margin: 2px 0;
+        }
+
+        .details {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .row3 {
+            display: flex;
+            justify-content: space-between;
+        }
+        .TC{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="ABESlogo.png" alt="College Logo" class="logo">
+            <div class="college-name">ABES Engineering College, Ghaziabad</div>
+            <div class="sub-heading">CLASS TIME TABLE</div>
+
+
+        </div>
+        <div class="row3">
+            <b><b>Faculty:</b> Alpna Lodhi</b>
+            <b>DEPARTMENT: COMPUTER APPLICATIONS</b>
+            <b>w.e.f:15 April 2025 <br>
+        </div>
+        <div class="details">
+            <div class="left">
+
+                <b>Dept:</b> MCA
+            </div>
+            <div>
+                <p class="right">
+
+                    <b>Session:</b> 2024-25, Even Semester
+                </p>
+            </div>
+        </div>
+
+
+
+
+
+        <table class="table1">
+            <thead>
+                <tr>
+                    <th rowspan="2">TIME DAY</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+
+                </tr>
+                <tr>
+                    <th>08:50-09:40</th>
+                    <th>09:40-10:30</th>
+                    <th>10:40-11:30</th>
+                    <th>11:30-12:20</th>
+                    <th>12:20-01:10</th>
+                    <th>01:10-02:00</th>
+                    <th>02:00-02:50</th>
+                    <th>02:50-03:40</th>
+                    <th>03:40-04:30</th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+                <tr>
+                    <th>MONDAY</th>
+                    <td class="AB206">L AB-206<br>25VC-101-AL</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="AB206">L AB-206<br>25VC-101-AL</td>
+                    <td colspan="2" id="VACA304">T AB-108 <br>VACA-304(HJ+AL)<br>Sec-B</td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <th>TUESDAY</th>
+                    <td colspan="2" class="VACA">T <br>AB-109<br>VACA-304-HJ+AL-Sec-C</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="AB206">L AB-206<br>25VC-101-AL</td>
+                    <td colspan="2" class="TC">Mentoe-Mentee(Final Year)</td>
+
+                </tr>
+                <tr>
+                    <th>WEDNESDAY</th>
+                    <td colspan="2" id="VACAsec-c">T AB-108 <br>VACA-304(HJ+AL)<br>Sec-B</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="2"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>THURSDAY</th>
+                    <td class="AB206">L AB-206<br>25VC-101-AL</td>
+                    <td></td>
+                    <td colspan="2" class="VACA">T <br>AB-108<br>VACA-304-HJ+AL-Section-B</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="2" id="VC25">P AB-206<br>25VC154-AL+AP</td>
+                </tr>
+                <tr>
+                    <th>FRIDAY</th>
+                    <td></td>
+                    <td></td>
+                    <td colspan="2" class="VACA">T <br>AB-207<br>VACA304-HJ+AL-Sec-A</td>
+                    <td rowspan-2 class="TC">L AB-206<br>25VC-101-AL</td>
+                    <td></td>
+                    <td></td>
+                    <td class="AB206">L AB-206<br>25VC-101-AL</td>
+                    <td colspan="2">Mentor-Mentee(First Year)</td>
+
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
